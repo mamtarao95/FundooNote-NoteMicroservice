@@ -1,0 +1,47 @@
+#eureka config
+spring: 
+  application:  
+    name: note-microservice
+
+
+#elastic search config
+  data:
+    elasticsearch:
+      cluster-nodes: localhost:9300
+
+#MongoDB 
+    mongodb:  
+      database: mongologin
+      host: localhost
+      port: 27017
+
+      
+#logging.level.root=WARN
+ 
+logging:
+  level:
+    org:
+      springframework:
+        web: ERROR
+
+
+  file: logging.log
+  
+#Exception messages
+LabelNotFound: Label doesn't exist
+UserNotFound: User doesn't exist
+UnAuthorization1: Label does not belongs to user
+InvalidReminder: Reminder Date is not valid
+NoteNotTrashed: Note is not trashed yet
+NoteNotFound: Note with given id could not be found or note you are looking for might have been trashed
+NoNotesPresent: Notes are not available.kindly create note
+UnAuthorization2: This particular note doesn't belongs to the user
+DuplicateLabel: Label already present
+
+server:
+  port: 8002
+
+eureka:
+  client: 
+    service-url.default-zone: http://localhost:8762/eureka
+      
